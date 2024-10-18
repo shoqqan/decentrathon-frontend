@@ -6,6 +6,7 @@ module.exports = {
 	ignorePatterns: ['dist'],
 	parser: '@typescript-eslint/parser',
 	rules: {
+		'react/jsx-no-useless-fragment': 'off',
 		'import/prefer-default-export': 'off',
 		'import/extensions': 'off',
 		'import/order': 'off',

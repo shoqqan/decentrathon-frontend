@@ -3,7 +3,8 @@ import { TextInput } from '@mantine/core'
 
 const TextInputExtend = TextInput.extend({
 	classNames: {
-		root: styles.text_input,
+		wrapper: styles.text_input,
+		input: styles.text_input_input,
 	},
 })
 

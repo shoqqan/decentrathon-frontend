@@ -4,6 +4,7 @@ import Router from './router'
 import '@/shared/base.scss'
 import { themeConfig } from '@/shared/configs/themeConfig'
 import { MantineProvider } from '@mantine/core'
+import '@mantine/core/styles.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 

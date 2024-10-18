@@ -1,15 +1,23 @@
+import { getTelegramInitData } from '@/shared/helpers/getTelegramInitData'
+import { getTelegramWebApp } from '@/shared/helpers/getTelegramWebApp'
 import type { PropsWithChildren } from 'react'
 import { createContext, useContext, useEffect, useState } from 'react'
+import type { TelegramWebApps } from 'telegram-webapps-types'
 
-const TelegramContext = createContext<null>(null)
+const TelegramContext = createContext<TelegramWebApps.WebAppInitData | null>(null)
 
 export function TelegramProvider({ children }: PropsWithChildren) {
-	const [data, setData] = useState<null>(null)
+	const [data, setData] = useState<TelegramWebApps.WebAppInitData | null>(null)
 
 	const handleTelegramInit = async () => {
 		try {
-			const telegram = window.Telegram
-			console.log(telegram)
+			const telegramWebApp = getTelegramWebApp()
+			if (!telegramWebApp) {
+				return
+			}
+
+			const initData = getTelegramInitData(telegramWebApp.initData)
+			setData(initData)
 		} catch (error) {
 			console.log(error)
 		}
