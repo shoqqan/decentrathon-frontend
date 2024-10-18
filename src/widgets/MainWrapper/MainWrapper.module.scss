@@ -1,6 +1,11 @@
+@import '@/shared/vars';
+
 .main_wrapper {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.main_space {
+	height: $main_navbar_height;
 }

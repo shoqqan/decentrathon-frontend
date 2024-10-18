@@ -8,7 +8,7 @@ interface IconButtonProps extends ComponentPropsWithRef<'button'> {}
 
 export const IconButton = forwardRef<ComponentRef<'button'>, IconButtonProps>(
 	({ children, className, ...props }, ref) => (
-		<UnstyledButton className={clsx(styles.icon_button)} ref={ref} {...props}>
+		<UnstyledButton className={clsx(styles.icon_button, className)} ref={ref} {...props}>
 			{children}
 		</UnstyledButton>
 	),
