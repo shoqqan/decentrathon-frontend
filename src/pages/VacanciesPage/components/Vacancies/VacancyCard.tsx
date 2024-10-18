@@ -3,16 +3,17 @@ import { getCurrencySymbol } from '@/shared/helpers/getCurrencySymbol'
 import { Button } from '@/shared/ui/Button'
 import type { ComponentPropsWithoutRef } from 'react'
 
-interface VacancyCardProps extends Omit<ComponentPropsWithoutRef<'button'>, 'children'> {
+interface VacancyCardProps extends Omit<ComponentPropsWithoutRef<'button'>, 'children' | 'className'> {
 	title: string
 	experience: string
 	salary: [number, number]
 	workType: string
+	onAccept: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export function VacancyCard({ title, experience, salary, workType }: VacancyCardProps) {
+export function VacancyCard({ title, experience, salary, workType, onAccept, ...props }: VacancyCardProps) {
 	return (
-		<div className={styles.vacancies_card}>
+		<button type='button' className={styles.vacancies_card} {...props}>
 			<div className={styles.header}>
 				<h5 className={styles.title}>{title}</h5>
 				<p className={styles.salary}>
@@ -30,7 +31,7 @@ export function VacancyCard({ title, experience, salary, workType }: VacancyCard
 				<span>10%</span>
 				<span>Подходит по вашим навыкам</span>
 			</div>
-			<Button>Откликнуться</Button>
-		</div>
+			<Button onClick={onAccept}>Откликнуться</Button>
+		</button>
 	)
 }

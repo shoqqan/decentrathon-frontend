@@ -6,6 +6,7 @@ const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
 const FeedbacksPage = lazy(() => import('../pages/FeedbacksPage/FeedbacksPage'))
 const TasksPage = lazy(() => import('../pages/TasksPage/TasksPage'))
 const ProfilePage = lazy(() => import('../pages/ProfilePage/ProfilePage'))
+const VacancyDetailPage = lazy(() => import('../pages/VacancyDetailPage/VacancyDetailPage'))
 
 const router = createBrowserRouter([
 	{
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
 			{
 				path: 'vacancies',
 				element: <VacanciesPage />,
+			},
+			{
+				path: 'vacancies/:id',
+				element: <VacancyDetailPage />,
 			},
 			{
 				path: 'feedback',

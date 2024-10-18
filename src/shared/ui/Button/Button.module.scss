@@ -4,7 +4,10 @@
 	align-items: center;
 	gap: 10px;
 	height: 50px;
-	background: red;
+	background: rgb(255, 0, 0);
 	border-radius: 10px;
 	color: white;
+	&:hover {
+		background: rgb(255, 0, 0, 0.8);
+	}
 }
