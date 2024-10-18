@@ -7,7 +7,7 @@
 		"dev": "vite --port=3000 --host=localhost",
 		"build": "tsc -b && vite build",
 		"lint": "eslint . --fix",
-		"preview": "vite preview --port=5000 --host=localhost"
+		"preview": "vite preview --port=3000 --host=localhost"
 	},
 	"husky": {
 		"hooks": {
@@ -21,6 +21,7 @@
 		]
 	},
 	"dependencies": {
+		"@heroicons/react": "^2.1.5",
 		"@mantine/core": "^7.13.3",
 		"@mantine/hooks": "^7.13.3",
 		"react": "^18.3.1",
