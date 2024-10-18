@@ -1,0 +1,37 @@
+.vacancies {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 10px;
+
+	.title {
+		font-size: 24px;
+		font-weight: 600;
+	}
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&_card {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		padding: 10px;
+		background: white;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	&_card > .title {
+		font-size: 20px;
+		font-weight: 600;
+	}
+	&_card > .salary {
+		font-size: 24px;
+		font-weight: 600;
+	}
+	&_card > .content {
+		font-size: 14px;
+		font-weight: 500;
+	}
+}

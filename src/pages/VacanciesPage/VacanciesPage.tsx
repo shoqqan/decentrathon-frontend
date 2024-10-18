@@ -1,6 +1,7 @@
 import { Activities } from './components/Activities'
 import { Hints } from './components/Hints'
 import { Search } from './components/Search'
+import { Vacancies } from './components/Vacancies'
 import styles from './VacanciesPage.module.scss'
 
 export default function VacanciesPage() {
@@ -9,6 +10,7 @@ export default function VacanciesPage() {
 			<Search />
 			<Activities />
 			<Hints />
+			<Vacancies />
 		</div>
 	)
 }

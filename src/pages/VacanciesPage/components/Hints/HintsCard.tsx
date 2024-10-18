@@ -9,7 +9,7 @@ interface HintsCardProps extends Omit<ComponentPropsWithoutRef<'div'>, 'children
 
 export function HintsCard({ className, icon, title, ...props }: HintsCardProps) {
 	return (
-		<div className={clsx(styles.hints_item)} {...props}>
+		<div className={clsx(styles.hints_card)} {...props}>
 			{icon}
 			<div className={styles.title}>{title}</div>
 		</div>
