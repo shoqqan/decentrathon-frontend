@@ -1,5 +1,5 @@
 import { MainWrapper } from '@/widgets/MainWrapper'
-import { lazy } from 'react'
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
@@ -37,7 +37,11 @@ const router = createBrowserRouter([
 ])
 
 function Router() {
-	return <RouterProvider router={router} />
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<RouterProvider router={router} />
+		</Suspense>
+	)
 }
 
 export default Router
