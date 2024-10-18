@@ -1,40 +1,38 @@
+import { MainWrapper } from '@/widgets/MainWrapper'
 import { lazy } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
-import { MainWrapper } from '@/widgets/MainWrapper/MainWrapper.tsx'
 
 const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
 const FeedbacksPage = lazy(() => import('../pages/FeedbacksPage/FeedbacksPage'))
 const TasksPage = lazy(() => import('../pages/TasksPage/TasksPage'))
 const ProfilePage = lazy(() => import('../pages/ProfilePage/ProfilePage'))
 
-
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <MainWrapper/>,
+		element: <MainWrapper />,
 		children: [
 			{
 				index: true,
-				element: <Navigate to="vacancies" replace />,
+				element: <Navigate to='vacancies' replace />,
 			},
 			{
 				path: 'vacancies',
-				element: <VacanciesPage/>,
+				element: <VacanciesPage />,
 			},
 			{
 				path: 'feedback',
-				element: <FeedbacksPage/>,
+				element: <FeedbacksPage />,
 			},
 			{
 				path: 'tasks',
-				element: <TasksPage/>
+				element: <TasksPage />,
 			},
 			{
-				path:'profile',
-				element: <ProfilePage/>
-			}
-
-		]
+				path: 'profile',
+				element: <ProfilePage />,
+			},
+		],
 	},
 ])
 
