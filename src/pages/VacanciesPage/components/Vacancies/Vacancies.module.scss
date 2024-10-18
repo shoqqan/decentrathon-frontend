@@ -17,22 +17,44 @@
 	&_card {
 		display: flex;
 		flex-direction: column;
-		gap: 5px;
+		gap: 10px;
 		padding: 10px;
 		background: white;
 		border-radius: 15px;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	}
-	&_card > .title {
+	&_card > .header {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	&_card > .header > .title {
 		font-size: 20px;
 		font-weight: 600;
 	}
-	&_card > .salary {
+	&_card > .header > .salary {
 		font-size: 24px;
 		font-weight: 600;
 	}
 	&_card > .content {
 		font-size: 14px;
 		font-weight: 500;
+	}
+	&_card > .percentage {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 5px 10px;
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+	}
+	&_card > .percentage > span:first-child {
+		font-size: 14px;
+		font-weight: 600;
+	}
+	&_card > .percentage > span:last-child {
+		font-size: 14px;
+		font-weight: 500;
+		color: rgba(0, 0, 0, 0.5);
 	}
 }
