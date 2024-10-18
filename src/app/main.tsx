@@ -12,7 +12,9 @@ createRoot(document.getElementById('root')!).render(
 		<MantineProvider theme={themeConfig}>
 			<AppProvider>
 				<TelegramProvider>
-					<Router />
+					<main className='app'>
+						<Router />
+					</main>
 				</TelegramProvider>
 			</AppProvider>
 		</MantineProvider>
