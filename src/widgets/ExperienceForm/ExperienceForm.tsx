@@ -1,4 +1,4 @@
-import styles from '@/widgets/VacancyForm/VacancyForm.module.scss'
+import styles from './ExperienceForm.module.scss'
 import { Controller } from 'react-hook-form'
 import { TextInput } from '@/shared/ui/TextInput'
 import { Textarea } from '@/shared/ui/Textarea/Textarea.tsx'
