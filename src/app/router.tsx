@@ -1,8 +1,9 @@
+import VacanciesPage from '../pages/VacanciesPage/VacanciesPage'
 import { MainWrapper } from '@/widgets/MainWrapper'
 import { lazy, Suspense } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
-const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
+// const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
 const FeedbacksPage = lazy(() => import('../pages/FeedbacksPage/FeedbacksPage'))
 const TasksPage = lazy(() => import('../pages/TasksPage/TasksPage'))
 const ProfilePage = lazy(() => import('../pages/ProfilePage/ProfilePage'))

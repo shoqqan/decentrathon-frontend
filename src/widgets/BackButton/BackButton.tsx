@@ -12,7 +12,7 @@ export function BackButton() {
 
 	return (
 		<IconButton className={styles.back_button} onClick={handleClick}>
-			<ArrowLeftIcon width={20} height={20} color='black' />
+			<ArrowLeftIcon width={20} height={20} />
 		</IconButton>
 	)
 }
