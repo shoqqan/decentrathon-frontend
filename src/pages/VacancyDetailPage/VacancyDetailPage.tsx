@@ -1,9 +1,11 @@
 import { Info } from './components/Info'
 import { Map } from './components/Map'
 import styles from './VacancyDetailPage.module.scss'
-import { BackButton } from '@/widgets/BackButton'
+import { useTelegramBackButton } from '@/shared/hooks/useTelegramBackButton'
 
 export default function VacancyDetailPage() {
+	useTelegramBackButton()
+
 	const vacancy = {
 		title: 'Разработка',
 		experience: '3 месяца',
@@ -14,7 +16,6 @@ export default function VacancyDetailPage() {
 
 	return (
 		<div className={styles.vacancy_detail_page}>
-			<BackButton />
 			<Info vacancy={vacancy} />
 			<Map />
 			<p className={styles.description}>{vacancy.description}</p>
