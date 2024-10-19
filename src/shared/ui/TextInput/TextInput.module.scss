@@ -1,6 +1,12 @@
 .text_input {
 	&_input {
-		border-radius: 10px !important;
 		height: 50px !important;
+		border-radius: 10px !important;
+		background: var(--tg-theme-secondary-bg-color) !important;
+		border-color: var(--tg-theme-hint-color) !important;
+		color: var(--tg-theme-text-color) !important;
+		&::placeholder {
+			color: var(--tg-theme-hint-color) !important;
+		}
 	}
 }

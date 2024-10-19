@@ -9,8 +9,9 @@
 		width: 130px;
 		height: 140px;
 		padding: 10px;
-		border: 1px solid rgba(0, 0, 0, 0.2);
+		border: 1px solid var(--tg-theme-secondary-bg-color);
 		border-radius: 15px;
+		background: var(--tg-theme-secondary-bg-color);
 	}
 	&_card > .title {
 		font-size: 16px;

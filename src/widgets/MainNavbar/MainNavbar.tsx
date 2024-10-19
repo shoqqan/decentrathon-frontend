@@ -11,7 +11,7 @@ const navItems = [
 	},
 	{
 		title: 'Отклики',
-		navigateTo: '/feedback',
+		navigateTo: '/feedbacks',
 		icon: <EnvelopeIcon width={24} height={24} />,
 	},
 	{
@@ -33,12 +33,7 @@ export function MainNavbar() {
 		<div className={styles.navbar__wrapper}>
 			<div className={styles.navbar}>
 				{navItems.map((nav) => (
-					<Link
-						to={nav.navigateTo}
-						className={clsx(styles.link, {
-							[styles.active]: pathname.includes(nav.navigateTo),
-						})}
-					>
+					<Link to={nav.navigateTo} className={clsx(styles.link)} data-active={pathname.includes(nav.navigateTo)}>
 						{nav.icon}
 						<p>{nav.title}</p>
 					</Link>

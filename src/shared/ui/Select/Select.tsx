@@ -6,6 +6,7 @@ const SelectExtend = Select.extend({
 		wrapper: styles.select,
 		input: styles.select_input,
 		dropdown: styles.select_dropdown,
+		option: styles.select_option,
 	},
 })
 

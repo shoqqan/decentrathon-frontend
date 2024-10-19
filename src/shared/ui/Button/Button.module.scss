@@ -4,10 +4,11 @@
 	align-items: center;
 	gap: 10px;
 	height: 50px;
-	background: rgb(255, 0, 0) !important;
+	background: var(--tg-theme-button-color) !important;
 	border-radius: 10px;
-	color: white !important;
+	color: var(--tg-theme-button-text-color) !important;
+	transition: opacity 0.3s ease-in-out;
 	&:hover {
-		background: rgb(255, 0, 0, 0.8) !important;
+		opacity: 0.8;
 	}
 }
