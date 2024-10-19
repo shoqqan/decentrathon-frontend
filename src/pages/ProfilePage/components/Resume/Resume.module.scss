@@ -15,6 +15,7 @@
   .skill{
     border-radius: 10px;
     padding: 5px;
-    background-color: gray;
+    background-color: var(--tg-theme-hint-color);
+    color: var(--tg-theme-text-color)
   }
 }
