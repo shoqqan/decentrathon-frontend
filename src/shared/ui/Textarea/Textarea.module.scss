@@ -1,6 +1,11 @@
 .text_area {
 	&_input {
-		border-radius: 10px !important;
 		height: 80px !important;
+		border-radius: 10px !important;
+		background: var(--tg-theme-secondary-bg-color) !important;
+		border-color: var(--tg-theme-hint-color) !important;
+		&::placeholder {
+			color: var(--tg-theme-hint-color) !important;
+		}
 	}
 }

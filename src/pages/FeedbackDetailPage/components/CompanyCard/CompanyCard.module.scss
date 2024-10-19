@@ -1,0 +1,19 @@
+.company_card {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 15px;
+	margin-top: 10px;
+	background: var(--tg-theme-secondary-bg-color);
+	border-radius: 15px;
+	box-shadow: 0 0 10px var(--tg-theme-hint-color);
+
+	.title {
+		font-size: 20px;
+		font-weight: 600;
+	}
+	.geolocation {
+		font-size: 14px;
+		font-weight: 500;
+	}
+}

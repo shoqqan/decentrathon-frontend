@@ -18,19 +18,23 @@ export function VacancyForm({ form }: VacancyFormProps) {
 				<Controller
 					control={form.control}
 					name='title'
-					render={({ field }) => <TextInput label='Название вакансии' {...field} />}
+					render={({ field }) => (
+						<TextInput label='Название вакансии' placeholder='Введите название вакансии' {...field} />
+					)}
 				/>
 
 				<Controller
 					control={form.control}
 					name='description'
-					render={({ field }) => <Textarea label='Описание вакансии' {...field} />}
+					render={({ field }) => (
+						<Textarea label='Описание вакансии' placeholder='Введите описание вакансии' {...field} />
+					)}
 				/>
 
 				<Controller
 					control={form.control}
 					name='experience'
-					render={({ field }) => <TextInput label='Опыт работы' {...field} />}
+					render={({ field }) => <TextInput label='Опыт работы' placeholder='Введите опыт работы' {...field} />}
 				/>
 
 				<Controller

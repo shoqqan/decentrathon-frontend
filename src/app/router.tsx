@@ -1,4 +1,5 @@
 import VacanciesPage from '../pages/VacanciesPage/VacanciesPage'
+import FeedbackDetailPage from '@/pages/FeedbackDetailPage/FeedbackDetailPage'
 import FeedbacksPage from '@/pages/FeedbacksPage/FeedbacksPage'
 import ProfilePage from '@/pages/ProfilePage/ProfilePage'
 import TasksPage from '@/pages/TasksPage/TasksPage'
@@ -39,10 +40,18 @@ const router = createBrowserRouter([
 				),
 			},
 			{
-				path: 'feedback',
+				path: 'feedbacks',
 				element: (
 					<Suspense fallback={<div>Loading...</div>}>
 						<FeedbacksPage />
+					</Suspense>
+				),
+			},
+			{
+				path: 'feedbacks/:id',
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<FeedbackDetailPage />
 					</Suspense>
 				),
 			},

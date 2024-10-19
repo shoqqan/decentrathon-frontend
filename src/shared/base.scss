@@ -11,8 +11,24 @@ body,
 	min-height: 100%;
 }
 
-body {
+html,
+body,
+#root {
 	background: black !important;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+	color: var(--tg-theme-text-color);
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+
+body {
+	// Touch Action
+	touch-action: pan-y;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }

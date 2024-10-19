@@ -10,7 +10,7 @@ export function Activities() {
 		<div className={styles.activities}>
 			<div className={styles.content}>
 				<div className={styles.title}>
-					<BoltIcon width={24} height={24} color='red' />
+					<BoltIcon className={styles.icon} width={24} height={24} />
 					<span>Ваша активность</span>
 				</div>
 				<div className={styles.percentage}>{activities.percentage}%</div>

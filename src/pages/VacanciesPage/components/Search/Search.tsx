@@ -14,7 +14,7 @@ export function Search() {
 				<TextInput
 					size='md'
 					leftSectionPointerEvents='none'
-					leftSection={<MagnifyingGlassIcon width={24} height={24} color='black' />}
+					leftSection={<MagnifyingGlassIcon className={styles.search_icon} width={24} height={24} />}
 					placeholder='Должность, ключевые слова'
 				/>
 				<IconButton onClick={filterModal[1].open}>

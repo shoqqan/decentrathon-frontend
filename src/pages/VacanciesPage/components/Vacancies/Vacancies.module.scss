@@ -19,10 +19,11 @@
 		flex-direction: column;
 		gap: 10px;
 		padding: 10px;
-		background: white;
+		background: var(--tg-theme-secondary-bg-color);
 		border-radius: 15px;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		cursor: pointer;
+		color: var(--tg-theme-text-color);
 	}
 	&_card > .header {
 		display: flex;
@@ -56,6 +57,5 @@
 	&_card > .percentage > span:last-child {
 		font-size: 14px;
 		font-weight: 500;
-		color: rgba(0, 0, 0, 0.5);
 	}
 }

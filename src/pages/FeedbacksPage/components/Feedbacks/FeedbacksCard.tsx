@@ -1,8 +1,11 @@
 import styles from './Feedbacks.module.scss'
 import { Button } from '@/shared/ui/Button'
 import { format } from 'date-fns'
+import { useNavigate } from 'react-router-dom'
 
 export function FeedbacksCard() {
+	const navigate = useNavigate()
+
 	const feedback = {
 		status: 'Не посмотрен',
 		createdAt: new Date(),
@@ -12,7 +15,13 @@ export function FeedbacksCard() {
 	}
 
 	return (
-		<button type='button' className={styles.feedbacks_card}>
+		<button
+			type='button'
+			className={styles.feedbacks_card}
+			onClick={() => {
+				navigate(`/feedbacks/${1}`)
+			}}
+		>
 			<div className={styles.header}>
 				<div className={styles.status}>{feedback.status}</div>
 			</div>
@@ -21,7 +30,9 @@ export function FeedbacksCard() {
 				<p>{format(feedback.createdAt, 'dd.MM.yyyy')}</p>
 			</div>
 			<Button
-				onClick={() => {
+				className={styles.button}
+				onClick={(event) => {
+					event.stopPropagation()
 					window.open('https://t.me/GazizFront', '_blank')
 				}}
 			>
