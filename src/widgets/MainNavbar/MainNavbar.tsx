@@ -15,7 +15,7 @@ const navItems = [
 		icon: <EnvelopeIcon width={24} height={24} />,
 	},
 	{
-		title: 'Токены',
+		title: 'Задания',
 		navigateTo: '/tasks',
 		icon: <CurrencyDollarIcon width={24} height={24} />,
 	},
