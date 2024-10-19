@@ -1,8 +1,9 @@
+import VacanciesPage from '../pages/VacanciesPage/VacanciesPage'
 import { MainWrapper } from '@/widgets/MainWrapper'
 import { lazy, Suspense } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
-const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
+// const VacanciesPage = lazy(() => import('../pages/VacanciesPage/VacanciesPage'))
 const FeedbacksPage = lazy(() => import('../pages/FeedbacksPage/FeedbacksPage'))
 const TasksPage = lazy(() => import('../pages/TasksPage/TasksPage'))
 const ProfilePage = lazy(() => import('../pages/ProfilePage/ProfilePage'))
@@ -19,34 +20,50 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'vacancies',
-				element: <VacanciesPage />,
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<VacanciesPage />
+					</Suspense>
+				),
 			},
 			{
 				path: 'vacancies/:id',
-				element: <VacancyDetailPage />,
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<VacancyDetailPage />
+					</Suspense>
+				),
 			},
 			{
 				path: 'feedback',
-				element: <FeedbacksPage />,
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<FeedbacksPage />
+					</Suspense>
+				),
 			},
 			{
 				path: 'tasks',
-				element: <TasksPage />,
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<TasksPage />
+					</Suspense>
+				),
 			},
 			{
 				path: 'profile',
-				element: <ProfilePage />,
+				element: (
+					<Suspense fallback={<div>Loading...</div>}>
+						<ProfilePage />
+					</Suspense>
+				),
 			},
 		],
 	},
 ])
 
 function Router() {
-	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<RouterProvider router={router} />
-		</Suspense>
-	)
+	return <RouterProvider router={router} />
 }
 
 export default Router
