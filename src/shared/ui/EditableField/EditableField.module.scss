@@ -7,5 +7,8 @@
   padding-bottom: 15px;
   padding-top: 15px;
   justify-content: space-between;
-  border-bottom: 1px solid $main_non_active_color;
+  border-bottom: 1px solid var(--tg-theme-link-color);
+  svg{
+    color: var(--tg-theme-link-color)
+  }
 }

@@ -13,7 +13,7 @@ export function EditableField({children,onCheck}: EditableFieldProps) {
 			onCheck()
 		}}>
 			{children}
-			<ChevronRightIcon width={24} height={24} color="gray"/>
+			<ChevronRightIcon width={24} height={24}/>
 		</div>
 	)
 }

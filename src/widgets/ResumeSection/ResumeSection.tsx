@@ -35,7 +35,7 @@ export function ResumeSection({fields,title,onCheck,addButtonTitle}:ResumeSectio
 					</EditableField>
 				)
 			)}
-			<UnstyledButton className={styles.add_button}>
+			<UnstyledButton className={styles.add_button} onClick={onCheck}>
 				<PlusCircleIcon width={24} height={24}/>
 				<p>{addButtonTitle}</p>
 			</UnstyledButton>

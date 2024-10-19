@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border-bottom: 1px solid $main_non_active_color;
+    border-bottom: 1px solid var(--tg-theme-link-color);
   }
 
   h1{
@@ -41,5 +41,3 @@ h2{
   margin-bottom: 2rem;
 }
 
-
-.

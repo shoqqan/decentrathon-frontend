@@ -29,7 +29,7 @@
 	align-items: center;
 	justify-content: center;
 	font-size: 14px;
-	color: #848d94;
+	color: var(--tg-theme-section-header-text-color);
 	&[data-active='true'] {
 		color: var(--tg-theme-accent-text-color);
 		font-weight: 500;
