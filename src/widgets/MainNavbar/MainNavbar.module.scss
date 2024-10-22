@@ -30,6 +30,7 @@
 	justify-content: center;
 	font-size: 14px;
 	color: #848d94;
+	transition: color 0.2s ease-in-out;
 	&[data-active='true'] {
 		color: var(--tg-theme-accent-text-color);
 		font-weight: 500;

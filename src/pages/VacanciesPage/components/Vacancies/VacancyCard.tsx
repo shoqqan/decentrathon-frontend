@@ -1,31 +1,29 @@
 import styles from './Vacancies.module.scss'
 import { getCurrencySymbol } from '@/shared/helpers/getCurrencySymbol'
+import type { TJob } from '@/shared/types'
 import { Button } from '@/shared/ui/Button'
 import type { ComponentPropsWithoutRef } from 'react'
 
 interface VacancyCardProps extends Omit<ComponentPropsWithoutRef<'button'>, 'children' | 'className'> {
-	title: string
-	experience: string
-	salary: [number, number]
-	workType: string
+	vacancy: TJob
 	onAccept: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export function VacancyCard({ title, experience, salary, workType, onAccept, ...props }: VacancyCardProps) {
+export function VacancyCard({ vacancy, onAccept, ...props }: VacancyCardProps) {
 	return (
 		<button type='button' className={styles.vacancies_card} {...props}>
 			<div className={styles.header}>
-				<h5 className={styles.title}>{title}</h5>
+				<h5 className={styles.title}>{vacancy.title}</h5>
 				<p className={styles.salary}>
-					<span>{salary[0]}</span>
+					<span>{vacancy.salary_from}</span>
 					<span>-</span>
-					<span>{salary[1]}</span>
+					<span>{vacancy.salary_to}</span>
 					<span>{getCurrencySymbol('ru-RU', 'RUB')}</span>
 				</p>
 			</div>
 			<div className={styles.content}>
-				<p>{experience}</p>
-				<p>{workType}</p>
+				<p>{vacancy.experience}</p>
+				<p>{vacancy.work_type}</p>
 			</div>
 			<div className={styles.percentage}>
 				<span>10%</span>

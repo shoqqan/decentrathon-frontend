@@ -1,31 +1,24 @@
 import styles from './Vacancies.module.scss'
 import { VacancyCard } from './VacancyCard'
-import { CreateVacancyDrawer } from '@/widgets/CreateVacancyDrawer'
-import { useDisclosure } from '@mantine/hooks'
+import type { TJobListResponse } from '@/shared/services/jobs'
+import type { TJob } from '@/shared/types'
+import type { UseQueryResult } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 
-export function Vacancies() {
-	const createVacancyModal = useDisclosure(false)
+interface VacanciesProps {
+	vacancies: UseQueryResult<TJobListResponse>
+}
+
+export function Vacancies({ vacancies }: VacanciesProps) {
 	const navigate = useNavigate()
 
-	const vacancies = [
-		{
-			title: 'Разработка',
-			experience: '3 месяца',
-			workType: 'full-time',
-			description: 'Разработка системы управления контентом для сайта https://decentrathon.org',
-			salary: [100, 200] as [number, number],
-		},
-	]
-
-	const handleVacancyClick = (vacancy: any) => () => {
+	const handleVacancyClick = (vacancy: TJob) => () => {
 		navigate(`/vacancies/${1}`)
 	}
 
-	const handleAcceptVacancy = (vacancy: any) => (event: React.MouseEvent<HTMLButtonElement>) => {
+	const handleAcceptVacancy = (vacancy: TJob) => (event: React.MouseEvent<HTMLButtonElement>) => {
 		event.preventDefault()
 		event.stopPropagation()
-		createVacancyModal[1].open()
 	}
 
 	return (
@@ -33,17 +26,16 @@ export function Vacancies() {
 			<div className={styles.vacancies}>
 				<h6 className={styles.title}>Вакансии для вас</h6>
 				<div className={styles.list}>
-					{vacancies.map((vacancy) => (
+					{vacancies.data?.jobs?.map((vacancy) => (
 						<VacancyCard
 							key={vacancy.title}
+							vacancy={vacancy}
 							onClick={handleVacancyClick(vacancy)}
 							onAccept={handleAcceptVacancy(vacancy)}
-							{...vacancy}
 						/>
 					))}
 				</div>
 			</div>
-			<CreateVacancyDrawer opened={createVacancyModal[0]} onClose={createVacancyModal[1].close} />
 		</>
 	)
 }

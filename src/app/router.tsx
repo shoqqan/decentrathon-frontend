@@ -1,9 +1,11 @@
 import VacanciesPage from '../pages/VacanciesPage/VacanciesPage'
+import { useRole } from './providers/AppProvider'
 import FeedbackDetailPage from '@/pages/FeedbackDetailPage/FeedbackDetailPage'
 import FeedbacksPage from '@/pages/FeedbacksPage/FeedbacksPage'
 import ProfilePage from '@/pages/ProfilePage/ProfilePage'
 import TasksPage from '@/pages/TasksPage/TasksPage'
 import VacancyDetailPage from '@/pages/VacancyDetailPage/VacancyDetailPage'
+import { AccountRoles } from '@/shared/constants/accountRoles'
 import { MainWrapper } from '@/widgets/MainWrapper'
 import { Suspense } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
@@ -25,12 +27,17 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'vacancies',
-				element: (
-					<Suspense fallback={<div>Loading...</div>}>
-						<VacanciesPage />
-					</Suspense>
-				),
+				Component: () => {
+					const { role } = useRole()
+
+					return (
+						<Suspense fallback={<div>Loading...</div>}>
+							{role === AccountRoles.APPLICANT ? <VacanciesPage /> : <VacanciesPage />}
+						</Suspense>
+					)
+				},
 			},
+
 			{
 				path: 'vacancies/:id',
 				element: (
